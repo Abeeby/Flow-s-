@@ -9,11 +9,11 @@ export default function Home() {
       <section className="relative h-[80vh] bg-green-600">
         <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
         <div className="relative h-full w-full">
-          <Image
+        <Image
             src="/hero-image.jpg"
             alt="FLOW - Cuisine de Saison"
             fill
-            priority
+          priority
             className="object-cover"
           />
         </div>
@@ -128,7 +128,7 @@ export default function Home() {
               Consultez nos réseaux sociaux pour connaître nos emplacements et horaires en temps réel.
             </p>
           </div>
-        </div>
+    </div>
       </section>
     </MainLayout>
   );

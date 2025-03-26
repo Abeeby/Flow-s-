@@ -15,7 +15,7 @@ FLOW - Cuisine de Saison est un food truck proposant des plats frais et de saiso
 
 - **Frontend** : React, Next.js, Tailwind CSS
 - **Backend** : API Routes de Next.js
-- **Base de données** : SQLite avec Prisma ORM
+- **Base de données** : PostgreSQL avec Prisma ORM
 - **Authentification** : NextAuth.js
 - **Gestion d'état** : Zustand
 - **Notifications** : React Hot Toast
@@ -47,6 +47,7 @@ FLOW - Cuisine de Saison est un food truck proposant des plats frais et de saiso
 ### Prérequis
 
 - Node.js 18+ et npm
+- PostgreSQL (pour le développement local)
 
 ### Étapes d'installation
 
@@ -73,6 +74,37 @@ FLOW - Cuisine de Saison est un food truck proposant des plats frais et de saiso
    ```
 
 5. Accédez à l'application sur http://localhost:3000
+
+## Déploiement sur Vercel
+
+1. Créez un compte sur [Vercel](https://vercel.com) si ce n'est pas déjà fait
+
+2. Configurez une base de données PostgreSQL, par exemple sur [Railway](https://railway.app), [Supabase](https://supabase.com) ou [Neon](https://neon.tech)
+
+3. Liez votre dépôt GitHub à Vercel
+
+4. Lors de l'importation du projet, configurez les variables d'environnement suivantes:
+   - `DATABASE_URL` : Votre URL de base de données PostgreSQL
+   - `NEXTAUTH_SECRET` : Une chaîne aléatoire pour sécuriser les sessions
+   - `NEXTAUTH_URL` : L'URL de votre site déployé (ex: https://flow-food-truck.vercel.app)
+
+5. Déployez votre application
+
+## Résolution des problèmes courants
+
+### Erreurs de déploiement
+
+- **FUNCTION_INVOCATION_FAILED** : Vérifiez que votre fichier .env est correctement configuré
+- **EDGE_FUNCTION_INVOCATION_TIMEOUT** : Assurez-vous que les appels à la base de données sont optimisés
+- **OPTIMIZED_IMAGE_REQUEST_FAILED** : Vérifiez que les domaines d'images sont correctement configurés dans next.config.js
+
+### Base de données
+
+Si vous rencontrez des erreurs de connexion à la base de données:
+
+1. Vérifiez que votre variable `DATABASE_URL` est correcte
+2. Assurez-vous que le schéma Prisma est à jour (`npx prisma generate`)
+3. Vérifiez que votre base de données PostgreSQL accepte les connexions depuis Vercel
 
 ## Structure du projet
 
