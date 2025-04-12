@@ -72,6 +72,19 @@ FLOW - Cuisine de Saison est un food truck proposant des plats frais et de saiso
    ```
    npm run dev
    ```
+   
+   **Remarque pour les problèmes de mémoire** : Si vous rencontrez des erreurs "JavaScript heap out of memory", utilisez plutôt ces scripts :
+   
+   - Windows (PowerShell) :
+     ```
+     ./start-dev.ps1
+     ```
+   
+   - macOS/Linux :
+     ```
+     chmod +x ./start-dev.sh
+     ./start-dev.sh
+     ```
 
 5. Accédez à l'application sur http://localhost:3000
 
@@ -91,6 +104,21 @@ FLOW - Cuisine de Saison est un food truck proposant des plats frais et de saiso
 5. Déployez votre application
 
 ## Résolution des problèmes courants
+
+### Erreurs de mémoire
+
+Si vous rencontrez des erreurs "JavaScript heap out of memory" :
+
+1. Utilisez les scripts fournis (`start-dev.ps1` pour Windows ou `start-dev.sh` pour macOS/Linux)
+2. Ou augmentez manuellement la mémoire allouée à Node.js :
+   ```
+   # Windows (PowerShell)
+   $env:NODE_OPTIONS="--max-old-space-size=4096"
+   
+   # macOS/Linux
+   export NODE_OPTIONS="--max-old-space-size=4096"
+   ```
+3. Puis lancez l'application avec `npm run dev`
 
 ### Erreurs de déploiement
 
