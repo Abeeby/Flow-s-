@@ -1,10 +1,25 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
+  "buildCommand": "prisma generate && prisma migrate deploy && next build",
   "installCommand": "npm install",
   "framework": "nextjs",
   "outputDirectory": ".next",
   "env": {
-    "NODE_ENV": "production"
+    "NODE_ENV": "production",
+    "DATABASE_URL": "postgresql://..."
+  },
+  "buildEnvironment": {
+    "NEXT_PUBLIC_VERCEL_ENV": "production",
+    "VERCEL_ENV": "production",
+    "PRISMA_SCHEMA_ENGINE_BINARY": {
+      "edge": "/tmp/prisma-engines/schema-engine",
+      "nodejs": "/tmp/prisma-engines/schema-engine-debian-openssl-3.0.x"
+    }
+  },
+  "functions": {
+    "src/app/api/**/*": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
   }
 } 
