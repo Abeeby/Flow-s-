@@ -1,0 +1,13 @@
+{
+  "name": "flow-food-truck-root",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "flow-food-truck"
+  ],
+  "scripts": {
+    "build": "cd flow-food-truck && npm run build",
+    "start": "cd flow-food-truck && npm run start",
+    "dev": "cd flow-food-truck && npm run dev"
+  }
+} 
