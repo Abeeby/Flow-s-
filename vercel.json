@@ -1,13 +1,7 @@
 {
-  "version": 2,
-  "framework": "nextjs",
-  "buildCommand": "cd flow-food-truck && npm install && prisma generate && next build",
-  "installCommand": "cd flow-food-truck && npm install",
-  "outputDirectory": "flow-food-truck/.next",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/flow-food-truck/$1" }
+    { "source": "/(.*)", "destination": "/" }
   ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "buildCommand": false,
+  "framework": false
 } 

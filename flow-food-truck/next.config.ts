@@ -38,6 +38,7 @@ const nextConfig = {
     // À utiliser uniquement pour déployer en urgence
     ignoreDuringBuilds: true,
   },
+  basePath: '',
 };
 
 module.exports = nextConfig;
